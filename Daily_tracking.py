@@ -6,7 +6,7 @@ from datetime import date
 st.set_page_config(layout="wide")
 st.title("📅 Project Daily Tracking Calendar testtt")
 
-uploaded_file = st.file_uploader("📤 Upload your Excel file", type=["xlsx"])
+uploaded_file = st.file_uploader("📤 Upload your Excel file",type=["xlsx"])
 
 if uploaded_file:
     df = pd.read_excel(uploaded_file)
