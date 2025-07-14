@@ -1,0 +1,24 @@
+version: 2.1
+
+jobs:
+  run-kibana-script:
+    docker:
+      - image: cimg/python:3.10  # Use Python 3.10 environment
+    steps:
+      - checkout  # Pull your GitHub repo
+
+      - run:
+          name: Install Python dependencies
+          command: |
+            python -m pip install --upgrade pip
+           
+
+      - run:
+          name: Run Python script to update Kibana dashboard
+          command: |
+            python Daily_tracking.py 
+
+workflows:
+  run-kibana-workflow:
+    jobs:
+      - run-kibana-script
